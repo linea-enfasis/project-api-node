@@ -33,12 +33,18 @@ async function initDB() {
         console.log(`   - Usuario: ${colors.cyan}${DB_USER}${colors.reset}`);
         console.log(`   - Base de Datos: ${colors.cyan}${DB_DATABASE}${colors.reset}\n`);
 
-        const confirm = await question(`${colors.yellow}⚠️  Esto eliminará la tabla 'products' si existe. ¿Deseas continuar? (y/n): ${colors.reset}`);
+        const isNonInteractive = process.argv.includes('--yes') || process.argv.includes('-y');
 
-        if (confirm.toLowerCase() !== 'y' && confirm.toLowerCase() !== 's') {
-            console.log(`\n${colors.red}❌ Operación cancelada por el usuario.${colors.reset}\n`);
-            rl.close();
-            return;
+        if (!isNonInteractive) {
+            const confirm = await question(`${colors.yellow}⚠️  Esto eliminará la tabla 'products' si existe. ¿Deseas continuar? (y/n): ${colors.reset}`);
+
+            if (confirm.toLowerCase() !== 'y' && confirm.toLowerCase() !== 's') {
+                console.log(`\n${colors.red}❌ Operación cancelada por el usuario.${colors.reset}\n`);
+                rl.close();
+                return;
+            }
+        } else {
+            console.log(`${colors.cyan}ℹ️  Modo no interactivo detectado (--yes). Continuando...${colors.reset}`);
         }
 
         console.log(`\n${colors.blue}📡 Conectando a MySQL en ${DB_HOST}:${DB_PORT}...${colors.reset}`);

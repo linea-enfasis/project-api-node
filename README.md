@@ -4,13 +4,14 @@ API REST profesional construida con **Node.js** y **Express** para la gestión d
 
 ## Tabla de Contenidos
 
-- [Características](#-características)
-- [Arquitectura del Proyecto](#-arquitectura-del-proyecto)
-- [Requisitos Previos](#-requisitos-previos)
-- [Instalación y Configuración](#-instalación-y-configuración)
-- [Inicialización de Base de Datos](#-inicialización-de-base-de-datos)
-- [Endpoints de la API](#-endpoints-de-la-api)
-- [Tecnologías Utilizadas](#-tecnologías-utilizadas)
+- [Características](#caracteristicas)
+- [Arquitectura del Proyecto](#arquitectura-del-proyecto)
+- [Requisitos Previos](#requisitos-previos)
+- [Instalación y Configuración](#instalacion-y-configuracion)
+- [Inicialización de Base de Datos](#inicializacion-de-base-de-datos)
+- [Endpoints de la API](#endpoints-de-la-api)
+- [Tecnologías Utilizadas](#tecnologias-utilizadas)
+- [Dockerización](#dockerizacion)
 
 ## Características
 
